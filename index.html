@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soup Reference Tables: Types, Timing, Thickeners, Fixes, Storage</title>
+<meta name="description" content="Sortable, filterable soup lookup tables: soup types, ingredient timing, thickening methods, liquids, troubleshooting, freezing and equipment.">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --text:#1f2328; --muted:#5b636d; --line:#e3e0d8;
+  --accent:#b4441b; --accent-soft:#fbeee7; --ok:#1d7a46; --warn:#9a6700; --bad:#b42318;
+  --head:#f3efe6;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#16181b; --surface:#1e2125; --text:#e8e6e1; --muted:#9aa3ad; --line:#33383e; --accent:#f08a5d; --accent-soft:#2b211c; --ok:#5ac58a; --warn:#e3b341; --bad:#ff7b72; --head:#262a2f;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+header.hero{padding:28px 16px 16px;max-width:1100px;margin:0 auto}
+header.hero h1{margin:0 0 4px;font-size:26px;letter-spacing:-.01em}
+header.hero p{margin:0;color:var(--muted)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.bar input[type=search]{flex:1 1 240px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--text);font:inherit}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px}
+.bar nav a{text-decoration:none}
+.bar nav a:hover{text-decoration:underline}
+#count{font-size:12px;color:var(--muted);white-space:nowrap}
+main{max-width:1100px;margin:0 auto;padding:8px 16px 48px}
+section{margin-top:32px}
+h2{font-size:19px;margin:0 0 4px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+h2 .n{font-size:12px;font-weight:500;color:var(--muted)}
+.sub{margin:0 0 10px;color:var(--muted);font-size:13px}
+.quick{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:12px 14px;margin-top:8px}
+.quick h2{font-size:15px;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.grid li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:13px}
+.grid b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:2px}
+.tools{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.tools select{padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--text);font:inherit;font-size:13px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+th,td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--head);position:sticky;top:0;font-size:12px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;cursor:pointer;user-select:none}
+thead th[aria-sort=ascending]::after{content:" \25B2";color:var(--accent)}
+thead th[aria-sort=descending]::after{content:" \25BC";color:var(--accent)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-soft)}
+td:first-child{font-weight:600}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid var(--line);white-space:nowrap}
+.good{color:var(--ok)} .mixed{color:var(--warn)} .avoid{color:var(--bad)}
+ul.plain{margin:6px 0 0;padding-left:18px}
+.note{font-size:12.5px;color:var(--muted);margin-top:8px}
+footer{max-width:1100px;margin:0 auto;padding:0 16px 40px;color:var(--muted);font-size:12.5px}
+@media print{.bar{display:none}.tablewrap{overflow:visible}thead th{position:static}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Soup Reference Tables</h1>
+  <p>Sort and filter: soup types, ingredient timing, thickeners, liquids, fixes, storage and equipment. Data compiled from and expanded on this <a href="https://kitchenmemo.com/soups/">no-recipe soup method and troubleshooting guide</a>.</p>
+</header>
+
+<div class="bar">
+  <div class="in">
+    <input id="q" type="search" placeholder="Filter every table (e.g. cream, gluten, 165, lentil)" aria-label="Filter all tables">
+    <span id="count" aria-live="polite"></span>
+    <nav aria-label="Jump to table">
+      <a href="#types">Types</a><a href="#timing">Timing</a><a href="#thickeners">Thickeners</a><a href="#liquids">Liquids</a><a href="#fixes">Fixes</a><a href="#storage">Storage</a><a href="#freeze">Freezing</a><a href="#equipment">Equipment</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<div class="quick" id="quick">
+  <h2>Quick reference</h2>
+  <ul class="grid">
+    <li><b>Formula</b>Aromatics &rarr; main ingredients &rarr; liquid &rarr; adjust body &rarr; season in stages &rarr; finish with acid/herbs</li>
+    <li><b>Poultry &amp; reheating</b>165&deg;F (74&deg;C) internal; bring soups to a rolling boil when reheating</li>
+    <li><b>Cooling</b>Refrigerate or freeze within 2 hours (1 hour above 90&deg;F / 32&deg;C), in shallow containers</li>
+    <li><b>Fridge / freezer</b>3&ndash;4 days at 40&deg;F (4&deg;C) or below; best quality 2&ndash;3 months frozen</li>
+    <li><b>Too salty?</b>Dilute with unsalted liquid or ingredients. Acid and potato do not remove sodium</li>
+    <li><b>Rule of thumb</b>One change at a time, then taste or check texture again</li>
+  </ul>
+</div>
+
+<section id="types">
+  <h2>Soup types compared <span class="n"></span></h2>
+  <p class="sub">Labels overlap in real usage; treat these as identifying cues, not strict definitions.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Type</th><th data-facet>Family</th><th>Texture</th><th>Body comes from</th><th>Typical ingredients / method</th><th>Cue or example</th></tr></thead>
+    <tbody>
+      <tr><td>Brothy soup</td><td>Clear / brothy</td><td>Clear to thick; visible liquid</td><td>Broth plus ingredients</td><td>Vegetables, meat, legumes or other ingredients in liquid</td><td>Chicken noodle soup: broth visible around ingredients</td></tr>
+      <tr><td>Stew</td><td>Hearty / chunky</td><td>Thick; large pieces, little free liquid</td><td>Concentrated cooking liquid</td><td>Meat or vegetables cooked in a smaller amount of liquid</td><td>Beef stew: gravy-like consistency</td></tr>
+      <tr><td>Chowder</td><td>Hearty / chunky</td><td>Hearty, chunky</td><td>Potatoes, often dairy</td><td>Often seafood or vegetables, commonly with potatoes and dairy</td><td>Corn chowder: recognizable pieces of corn and vegetables</td></tr>
+      <tr><td>Bisque</td><td>Smooth / blended</td><td>Smooth, rich, often creamy</td><td>Purée, often with cream</td><td>Traditionally puréed shellfish; modern usage is broader</td><td>Lobster bisque</td></tr>
+      <tr><td>Purée soup</td><td>Smooth / blended</td><td>Blended, uniform</td><td>Cooked ingredients blended into the liquid</td><td>Any cooked vegetables or legumes, blended</td><td>Pumpkin soup, fully blended</td></tr>
+      <tr><td>Consommé</td><td>Clear / brothy</td><td>Very clear, light-bodied</td><td>Clarified, gelatin-rich stock</td><td>Rich stock clarified (traditionally with an egg-white raft), served plain or garnished</td><td>Transparent with no cloudiness</td></tr>
+      <tr><td>Velouté</td><td>Smooth / blended</td><td>Smooth, velvety</td><td>Roux-thickened stock, often finished with cream</td><td>Stock thickened with roux, then blended or strained</td><td>Pale, silky; e.g. velouté of mushroom</td></tr>
+      <tr><td>Cream soup</td><td>Smooth / blended</td><td>Creamy</td><td>Dairy plus roux or puréed vegetables</td><td>Vegetable or chicken base finished with milk or cream near the end</td><td>Cream of mushroom; gentle heat limits separation</td></tr>
+      <tr><td>Minestrone</td><td>Hearty / chunky</td><td>Chunky vegetable soup</td><td>Beans, pasta or rice, vegetables</td><td>Mixed vegetables, beans, pasta or rice, often tomato-based</td><td>Italian; ingredients clearly visible</td></tr>
+      <tr><td>Gumbo</td><td>Hearty / chunky</td><td>Thick, stew-like</td><td>Roux, often okra or filé</td><td>Meat or seafood with aromatics; commonly served over rice</td><td>Louisiana dish; dark roux flavor</td></tr>
+      <tr><td>Borscht</td><td>Hearty / chunky</td><td>Hearty, brothy</td><td>Beets and other vegetables</td><td>Beets with cabbage, potato and other vegetables; served hot or cold</td><td>Deep red-purple color</td></tr>
+      <tr><td>French onion soup</td><td>Clear / brothy</td><td>Brothy with a bread-and-cheese topping</td><td>Long-cooked onions in broth</td><td>Deeply cooked onions in (usually beef) broth, topped with bread and melted cheese</td><td>Browned cheese crust</td></tr>
+      <tr><td>Pho</td><td>Clear / brothy</td><td>Clear, aromatic</td><td>Long-simmered spiced broth</td><td>Beef or chicken broth, rice noodles, fresh herbs</td><td>Vietnamese; noodles and herbs added to the bowl</td></tr>
+      <tr><td>Miso soup</td><td>Clear / brothy</td><td>Light, slightly cloudy</td><td>Dashi plus miso paste</td><td>Dashi, miso, tofu, seaweed; miso is usually stirred in off a hard boil</td><td>Japanese; cloudy from the miso</td></tr>
+      <tr><td>Tom yum</td><td>Clear / brothy</td><td>Thin, hot-and-sour</td><td>Aromatic broth</td><td>Lemongrass, galangal, makrut lime leaves, chili, lime juice</td><td>Thai; clear and creamy versions exist</td></tr>
+      <tr><td>Lentil soup</td><td>Legume-based</td><td>Hearty; thickens as lentils soften</td><td>Lentils, often partly blended</td><td>Lentils, aromatics, stock or water</td><td>Blend a portion for a creamier body</td></tr>
+      <tr><td>Split pea soup</td><td>Legume-based</td><td>Thick, soft</td><td>Peas breaking down as they cook</td><td>Split peas, onion, carrot, often ham</td><td>Thickens further on standing</td></tr>
+      <tr><td>Gazpacho</td><td>Cold</td><td>Cold, blended, uncooked</td><td>Blended raw vegetables, often with bread and oil</td><td>Tomato, cucumber, pepper, olive oil, vinegar; no simmering</td><td>Spanish; served chilled</td></tr>
+      <tr><td>Vichyssoise</td><td>Cold</td><td>Cold, smooth, creamy</td><td>Blended potato and leek, with cream</td><td>Potato and leek cooked, blended, chilled</td><td>Served cold; pale and silky</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="timing">
+  <h2>Ingredient timing: when each goes in <span class="n"></span></h2>
+  <p class="sub">Starting estimates only. Piece size, quantity, equipment and simmer intensity change the real time; check doneness cues. Sort by the Order column to read it as a sequence.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Ingredient</th><th data-facet>Order</th><th>Approx. timing</th><th>Doneness cue</th></tr></thead>
+    <tbody>
+      <tr><td>Onion, celery, carrot</td><td>1 &middot; Start</td><td>Often 5&ndash;10 min to soften, in a little fat</td><td>Softened and fragrant; browned only when intended</td></tr>
+      <tr><td>Leek</td><td>1 &middot; Start</td><td>Often 5&ndash;10 min, gentle heat</td><td>Soft, not browned</td></tr>
+      <tr><td>Garlic</td><td>1 &middot; Start</td><td>About 30&ndash;60 sec after other aromatics</td><td>Fragrant, not browned or bitter</td></tr>
+      <tr><td>Ground meat</td><td>1 &middot; Start</td><td>Brown before adding liquid</td><td>No pink; 160&deg;F (71&deg;C) internal</td></tr>
+      <tr><td>Mushrooms</td><td>2 &middot; Early</td><td>Often 5&ndash;10 min</td><td>Moisture released, lightly browned</td></tr>
+      <tr><td>Canned tomatoes, wine</td><td>2 &middot; Early</td><td>Simmer long enough for flavor to develop</td><td>Raw or sharp edge gone</td></tr>
+      <tr><td>Potato, other dense vegetables</td><td>2 &middot; Early</td><td>Often 10&ndash;25 min, by size</td><td>Easily pierced with a fork</td></tr>
+      <tr><td>Dried lentils</td><td>2 &middot; Early</td><td>Follow variety and package guidance; red lentils usually cook faster than brown or green</td><td>Tender throughout</td></tr>
+      <tr><td>Dried beans</td><td>2 &middot; Early</td><td>Follow package guidance; commonly well over an hour, less if presoaked</td><td>Creamy and tender throughout</td></tr>
+      <tr><td>Pearl barley</td><td>2 &middot; Early</td><td>Follow package guidance; often 25&ndash;40 min</td><td>Chewy but tender</td></tr>
+      <tr><td>Raw poultry</td><td>2 &middot; Early</td><td>Variable; use a thermometer, not time alone</td><td>165&deg;F (74&deg;C) internal</td></tr>
+      <tr><td>White rice</td><td>3 &middot; Middle</td><td>Follow package guidance; often 15&ndash;20 min</td><td>Tender; it keeps absorbing liquid</td></tr>
+      <tr><td>Hearty greens (kale, collards)</td><td>3 &middot; Middle</td><td>Often 5&ndash;15 min</td><td>Tender, not tough</td></tr>
+      <tr><td>Zucchini, peas, corn kernels</td><td>4 &middot; Late</td><td>Often a few minutes</td><td>Tender without losing all shape</td></tr>
+      <tr><td>Canned beans, chickpeas</td><td>4 &middot; Late</td><td>Few minutes to heat through and take on flavor</td><td>Heated through, still intact</td></tr>
+      <tr><td>Pasta</td><td>4 &middot; Late</td><td>Follow package instructions; check early</td><td>Just tender, not mushy</td></tr>
+      <tr><td>Tender greens (spinach)</td><td>4 &middot; Late</td><td>About 1&ndash;3 min</td><td>Wilted, bright green</td></tr>
+      <tr><td>Shrimp, fish</td><td>5 &middot; Final minutes</td><td>Often a few minutes</td><td>Opaque; fish reaches 145&deg;F (63&deg;C)</td></tr>
+      <tr><td>Cream, milk</td><td>5 &middot; Final minutes</td><td>Stir in near the end at gentle heat</td><td>Heated through, not boiled hard</td></tr>
+      <tr><td>Fresh herbs, acid (lemon, vinegar)</td><td>6 &middot; Finish</td><td>Just before serving</td><td>Fresh aroma, balanced flavor</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="thickeners">
+  <h2>Thickening methods <span class="n"></span></h2>
+  <p class="sub">Add gradually, give the texture time to develop, then reassess before adding more.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Method</th><th>How to use it</th><th>Texture / flavor effect</th><th data-facet>Gluten-free?</th><th>Watch for</th></tr></thead>
+    <tbody>
+      <tr><td>Potato</td><td>Simmer until tender; leave in pieces or blend in</td><td>Soft, hearty body</td><td>Yes</td><td>Can turn grainy if frozen and thawed</td></tr>
+      <tr><td>Blended beans or lentils</td><td>Blend some cooked legumes with liquid, return to pot</td><td>Creamy, with a legume flavor</td><td>Yes</td><td>Check packaged ingredients</td></tr>
+      <tr><td>Purée of the soup itself</td><td>Blend a portion, return it, adjust to taste</td><td>Thickens without a separate thickener</td><td>Depends on ingredients</td><td>Blend hot liquids carefully</td></tr>
+      <tr><td>Roux (flour + fat)</td><td>Cook flour in fat, then add liquid gradually</td><td>Smooth, rich thickness</td><td>No (unless made with a suitable alternative)</td><td>Never add dry flour straight to hot soup</td></tr>
+      <tr><td>Cornstarch slurry</td><td>Mix with cold liquid, then stir into hot soup</td><td>Fairly smooth, sometimes glossy</td><td>Usually (check label)</td><td>Easy to overshoot; add a little at a time</td></tr>
+      <tr><td>Arrowroot slurry</td><td>Mix with cold liquid, stir in near the end</td><td>Clear, glossy</td><td>Yes</td><td>Avoid prolonged boiling</td></tr>
+      <tr><td>Ground nuts</td><td>Add finely ground nuts in small amounts; blend or stir well</td><td>Rich, distinct nutty flavor</td><td>Yes</td><td>Nut allergen</td></tr>
+      <tr><td>Cooked rice, blended</td><td>Simmer rice until very soft, then blend in</td><td>Neutral, creamy body</td><td>Yes</td><td>Thickens further as it cools</td></tr>
+      <tr><td>Bread, blended</td><td>Soak or simmer stale bread, then blend in</td><td>Rustic, soft body</td><td>No (unless gluten-free bread)</td><td>Can dull a clear flavor</td></tr>
+      <tr><td>Egg-yolk liaison</td><td>Whisk yolks with cream or hot soup to temper, then stir in</td><td>Silky, rich</td><td>Yes</td><td>Egg allergen; do not boil or it may curdle</td></tr>
+      <tr><td>Reduction</td><td>Simmer uncovered to evaporate liquid</td><td>Concentrates flavor and salt</td><td>Yes</td><td>Concentrates salt, so taste afterward</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="liquids">
+  <h2>Soup liquids compared <span class="n"></span></h2>
+  <p class="sub">Salt and concentration vary by brand and recipe. Taste the base before adding salt.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Liquid</th><th>Flavor</th><th>Body</th><th>Salt level</th><th>Best for / how to adjust</th></tr></thead>
+    <tbody>
+      <tr><td>Stock</td><td>Savory, often from bones and aromatic vegetables</td><td>Can be rich and gelatinous</td><td>Depends on preparation or product</td><td>Soups needing body; check seasoning before adding salt</td></tr>
+      <tr><td>Broth</td><td>Often lighter, meat or vegetable flavor</td><td>Usually lighter than gelatin-rich stock</td><td>Varies widely</td><td>Chicken, vegetable and clear soups; taste before seasoning</td></tr>
+      <tr><td>Bouillon</td><td>Concentrated, seasoned</td><td>Varies by product</td><td>Often high</td><td>Fast flavor; follow the label and reduce added salt</td></tr>
+      <tr><td>Water</td><td>Neutral, no added stock flavor</td><td>Depends on the ingredients</td><td>None initially</td><td>Vegetable, bean and strongly flavored soups; build flavor with aromatics and seasoning</td></tr>
+      <tr><td>Vegetable stock</td><td>Mild, sweet, savory</td><td>Light</td><td>Varies by product</td><td>Vegetarian soups; may need extra seasoning or umami</td></tr>
+      <tr><td>Bone broth</td><td>Deep, meaty</td><td>Often gelatin-rich</td><td>Varies by product</td><td>Hearty soups; long extraction, so watch time and liquid level</td></tr>
+      <tr><td>Dashi</td><td>Light, savory, umami</td><td>Thin</td><td>Varies (low unless seasoned)</td><td>Miso and other Japanese-style soups</td></tr>
+      <tr><td>Low-sodium / unsalted stock</td><td>Milder, relies on added seasoning</td><td>Varies</td><td>Low</td><td>Reducing soups or rescuing an over-salted pot</td></tr>
+      <tr><td>Bean cooking liquid</td><td>Savory, earthy</td><td>Slightly starchy</td><td>Depends on how beans were cooked</td><td>Adds body to bean and vegetable soups; taste for salt</td></tr>
+      <tr><td>Coconut milk</td><td>Rich, sweet, creamy</td><td>Full, fatty</td><td>Low</td><td>Curry-style and tom yum-style soups; add with gentle heat</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="fixes">
+  <h2>Diagnose and fix <span class="n"></span></h2>
+  <p class="sub">Change one thing at a time, then taste or check texture again.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Symptom</th><th>Why it happens</th><th>Fix</th><th>Prevent</th><th>Don&rsquo;t</th><th data-facet>Fixable?</th></tr></thead>
+    <tbody>
+      <tr><td>Too salty</td><td>Excess salt, salty stock, or heavy reduction</td><td>Dilute with unsalted liquid or add more unsalted ingredients</td><td>Season gradually; taste after reduction</td><td>Rely on a potato to remove salt</td><td>Usually</td></tr>
+      <tr><td>Too thin / watery</td><td>Too much liquid or too little body</td><td>Reduce carefully or purée part of the soup</td><td>Match liquid to ingredients and texture</td><td>Add dry flour to hot soup</td><td>Usually</td></tr>
+      <tr><td>Too thick</td><td>Over-reduction, starch or purée</td><td>Stir in hot water or unsalted stock a little at a time</td><td>Add thickener gradually</td><td>Add salty stock without tasting</td><td>Usually</td></tr>
+      <tr><td>Bland</td><td>Weak aromatics, low seasoning or poor balance</td><td>Check salt first, then try acid, umami or herbs</td><td>Develop the base before adding final liquid</td><td>Keep adding salt without tasting</td><td>Usually</td></tr>
+      <tr><td>Greasy</td><td>Excess fat or fat released from meat</td><td>Skim hot, or chill and lift off solid fat</td><td>Trim fat; measure added oil</td><td>Stir in more oil</td><td>Usually</td></tr>
+      <tr><td>Curdled</td><td>Dairy separated from unsuitable heat or acidity</td><td>Lower the heat; blending or straining may improve appearance</td><td>Add dairy carefully near the end</td><td>Boil aggressively or assume it is reversible</td><td>Partly</td></tr>
+      <tr><td>Grainy</td><td>Incomplete blending, skins or unsuitable starch texture</td><td>Blend further, strain, or loosen with liquid</td><td>Cook until tender; blend as needed</td><td>Assume every grainy texture is fixable</td><td>Partly</td></tr>
+      <tr><td>Bitter</td><td>Scorched aromatics or burnt ingredients</td><td>Remove the unburnt portion and reassess</td><td>Monitor heat; avoid scorching</td><td>Scrape burnt material into the soup</td><td>Maybe not</td></tr>
+      <tr><td>Burnt bottom</td><td>Ingredients scorched against the pot</td><td>Move unburnt soup to a clean pot without scraping</td><td>Stir when needed; control heat</td><td>Stir the burnt layer back in</td><td>Maybe not</td></tr>
+      <tr><td>Too acidic</td><td>Heavy tomato, vinegar or citrus</td><td>Dilute with unsalted liquid; a little fat or a small pinch of sugar can soften it</td><td>Add acid in small amounts, late</td><td>Add more salt to cover it</td><td>Usually</td></tr>
+      <tr><td>Cloudy (clear soup)</td><td>Hard boiling or heavy stirring</td><td>Strain through a fine sieve or cheesecloth</td><td>Keep a gentle simmer; skim</td><td>Boil vigorously</td><td>Partly</td></tr>
+      <tr><td>Mushy vegetables</td><td>Added too early or simmered too long</td><td>Blend into a purée soup, or serve as is</td><td>Add by cook time; check tenderness</td><td>Keep simmering to &ldquo;finish&rdquo;</td><td>Partly</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="storage">
+  <h2>Cooling, storing and reheating <span class="n"></span></h2>
+  <p class="sub">Based on USDA food-safety guidance. Freezer times are quality guidance; continuously frozen food stays safe indefinitely.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Stage</th><th>Guidance</th><th>Container / method</th></tr></thead>
+    <tbody>
+      <tr><td>Cooling</td><td>Refrigerate or freeze within 2 hours; within 1 hour if the room is above 90&deg;F (32&deg;C)</td><td>Shallow containers; do not leave a big pot out to cool</td></tr>
+      <tr><td>Refrigeration</td><td>Use within 3&ndash;4 days; fridge at 40&deg;F (4&deg;C) or below</td><td>Shallow, covered containers</td></tr>
+      <tr><td>Freezing</td><td>Soups and stews: about 2&ndash;3 months for best quality</td><td>Freezer-safe airtight containers; leave room for expansion; label with date</td></tr>
+      <tr><td>Thawing</td><td>Thaw in the refrigerator or by a safe microwave method</td><td>Keep portions sealed in the fridge</td></tr>
+      <tr><td>Reheating</td><td>Leftovers to 165&deg;F (74&deg;C); soups, sauces and gravies to a rolling boil</td><td>Heat evenly, stir, check temperature</td></tr>
+      <tr><td>Spoilage</td><td>Discard soup past safe time limits or showing spoilage signs</td><td>Never taste questionable food to test it</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="freeze">
+  <h2>Freezes well vs. freezes badly <span class="n"></span></h2>
+  <p class="sub">Results depend on ingredients, preparation and reheating. When texture matters, freeze the base and add delicate parts after thawing.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Soup type</th><th data-facet>Freezer rating</th><th>What may happen</th><th>Better approach</th></tr></thead>
+    <tbody>
+      <tr><td>Clear stock or broth</td><td class="good">Good</td><td>Little change</td><td>Cool promptly; freeze in portions</td></tr>
+      <tr><td>Broth-based vegetable soup</td><td class="good">Good</td><td>Tender vegetables may soften further</td><td>Cool promptly and freeze in portions</td></tr>
+      <tr><td>Puréed vegetable soup</td><td class="good">Good</td><td>May need a stir or a splash of liquid</td><td>Reheat gently; adjust consistency</td></tr>
+      <tr><td>Tomato-based soup</td><td class="good">Good</td><td>Little change</td><td>Freeze in portions; leave expansion room</td></tr>
+      <tr><td>Bean or lentil soup</td><td class="good">Good</td><td>Thicker after thawing</td><td>Stir well; loosen with hot liquid</td></tr>
+      <tr><td>Soup with leafy greens</td><td class="mixed">Mixed</td><td>Greens soften and darken</td><td>Add fresh greens when reheating</td></tr>
+      <tr><td>Soup with rice</td><td class="mixed">Mixed</td><td>Rice softens and absorbs liquid</td><td>Freeze the base; add cooked rice after thawing</td></tr>
+      <tr><td>Coconut milk soup</td><td class="mixed">Mixed</td><td>Fat may separate</td><td>Reheat gently; stir or blend smooth</td></tr>
+      <tr><td>Cream-based soup</td><td class="mixed">Mixed</td><td>Cream may separate or change texture</td><td>Freeze the base before adding cream</td></tr>
+      <tr><td>Potato soup</td><td class="mixed">Mixed</td><td>Potatoes may turn grainy, crumbly or softer</td><td>Expect a texture change; blend or adjust liquid</td></tr>
+      <tr><td>Soup with pasta</td><td class="avoid">Avoid</td><td>Pasta softens and absorbs more liquid</td><td>Freeze the base; add freshly cooked pasta after thawing</td></tr>
+      <tr><td>Egg-thickened soup</td><td class="avoid">Avoid</td><td>May curdle or turn grainy on reheating</td><td>Make the base ahead; add the egg liaison fresh</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="equipment">
+  <h2>Equipment compared <span class="n"></span></h2>
+  <p class="sub">When scaling up, do not assume salt, liquid or time rise in exact proportion to portions. Respect appliance fill limits.</p>
+  <div class="tablewrap"><table class="ref">
+    <thead><tr><th>Equipment</th><th>Hands-on time</th><th>Browning &amp; liquid</th><th>Blending</th></tr></thead>
+    <tbody>
+      <tr><td>Stovetop pot</td><td>Needs monitoring and stirring</td><td>Easy to adjust heat and evaporation; aromatics brown in the pot</td><td>Immersion blender, or transfer carefully to a blender</td></tr>
+      <tr><td>Dutch oven</td><td>Moderate; can finish in the oven</td><td>Strong browning; steady even heat; good for stews</td><td>Immersion blender, or blend in batches</td></tr>
+      <tr><td>Slow cooker</td><td>Low while cooking</td><td>Limited browning unless done separately; less evaporation</td><td>Blend separately if the appliance cannot</td></tr>
+      <tr><td>Pressure cooker</td><td>Shorter active cooking, but setup and pressure release take time</td><td>Sauté first when available; follow minimum-liquid and max-fill rules</td><td>Blend after cooking if appropriate</td></tr>
+      <tr><td>Thermomix</td><td>Can combine chopping, heating, stirring and blending</td><td>Depends on model, program and quantity</td><td>Follow model-specific instructions and fill limits</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Common beginner mistakes: adding everything at once, salting heavily before reduction, boiling delicate ingredients too long, using more thickener than needed.</p>
+</section>
+
+</main>
+
+<footer>
+  General cooking and food-safety reference, not a substitute for product labels, appliance manuals or official food-safety authorities.
+</footer>
+
+<script>
+(function () {
+  var tables = Array.prototype.slice.call(document.querySelectorAll('table.ref'));
+  var q = document.getElementById('q');
+  var count = document.getElementById('count');
+
+  tables.forEach(function (t) {
+    var ths = Array.prototype.slice.call(t.tHead.rows[0].cells);
+    var fi = ths.findIndex(function (th) { return th.hasAttribute('data-facet'); });
+    if (fi > -1) {
+      var seen = {};
+      Array.prototype.forEach.call(t.tBodies[0].rows, function (r) { seen[r.cells[fi].textContent.trim()] = 1; });
+      var sel = document.createElement('select');
+      sel.setAttribute('aria-label', 'Filter by ' + ths[fi].textContent);
+      var all = document.createElement('option');
+      all.value = ''; all.textContent = 'All: ' + ths[fi].textContent.toLowerCase();
+      sel.appendChild(all);
+      Object.keys(seen).sort().forEach(function (v) {
+        var o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o);
+      });
+      sel.addEventListener('change', apply);
+      var bar = document.createElement('div'); bar.className = 'tools'; bar.appendChild(sel);
+      t.parentNode.parentNode.insertBefore(bar, t.parentNode);
+      t._sel = sel; t._fi = fi;
+    }
+    ths.forEach(function (th, i) {
+      th.tabIndex = 0;
+      th.addEventListener('click', function () { sortBy(t, i, th); });
+      th.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sortBy(t, i, th); } });
+    });
+  });
+
+  function sortBy(t, i, th) {
+    var dir = th.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
+    Array.prototype.forEach.call(t.tHead.rows[0].cells, function (c) { c.removeAttribute('aria-sort'); });
+    th.setAttribute('aria-sort', dir);
+    var rows = Array.prototype.slice.call(t.tBodies[0].rows);
+    rows.sort(function (a, b) {
+      var x = a.cells[i].textContent.trim(), y = b.cells[i].textContent.trim();
+      var r = x.localeCompare(y, undefined, { numeric: true, sensitivity: 'base' });
+      return dir === 'ascending' ? r : -r;
+    });
+    rows.forEach(function (r) { t.tBodies[0].appendChild(r); });
+  }
+
+  function apply() {
+    var term = q.value.trim().toLowerCase(), total = 0;
+    tables.forEach(function (t) {
+      var shown = 0, rows = t.tBodies[0].rows;
+      Array.prototype.forEach.call(rows, function (r) {
+        var ok = !term || r.textContent.toLowerCase().indexOf(term) > -1;
+        if (ok && t._sel && t._sel.value) { ok = r.cells[t._fi].textContent.trim() === t._sel.value; }
+        r.hidden = !ok; if (ok) shown++;
+      });
+      total += shown;
+      var n = t.closest('section').querySelector('.n');
+      if (n) n.textContent = shown + ' of ' + rows.length + ' rows';
+    });
+    count.textContent = total + ' rows shown';
+  }
+
+  q.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+</html>
